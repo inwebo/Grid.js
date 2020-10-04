@@ -5,36 +5,40 @@ export default class CoordinatesAbstract {
      * @param {Vector2D} vector
      */
     constructor(vector) {
-        this._vector = vector;
-        this._map    = null;
+        this._center    = vector;
+        this._neighbors = null;
     }
 
     /**
+     * Return all neighbors
+     * @param {boolean} simple
      * @return {Map}
      */
-    getNeighbors() {
-        if(this._map === null) {
-            this._map = new Map([
+    getNeighbors(simple = true) {
+        if(this._neighbors === null) {
+            this._neighbors = new Map([
                 ['N',  this.getNorth()],
-                ['NW', this.getNorthWest()],
                 ['W',  this.getWest()],
-                ['SW', this.getSouthWest()],
-                ['C',  this.getCenter()],
                 ['S',  this.getSouth()],
-                ['SE', this.getSouthEast()],
                 ['E',  this.getEast()],
-                ['NE', this.getNorthEast()],
             ]);
+
+            if(false === simple) {
+                this._neighbors.set('NW', this.getNorthWest());
+                this._neighbors.set('SW', this.getSouthWest());
+                this._neighbors.set('SE', this.getSouthEast());
+                this._neighbors.set('NE', this.getNorthEast());
+            }
         }
 
-        return this._map;
+        return this._neighbors;
     }
 
     /**
      * @returns {Vector2D}
      */
     getCenter() {
-        return this._vector;
+        return this._center;
     }
 
     /**
