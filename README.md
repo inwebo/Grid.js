@@ -1,5 +1,5 @@
 # Grid.js
-
+[See demo page](https://inwebo.github.io/Grid.js/)
 ## Installation
 ```bash
 git clone https://github.com/inwebo/Grid.js.git

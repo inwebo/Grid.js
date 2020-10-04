@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/inwebo/grid.js.git"
   },
-  "homepage": "https://inwebo.github.io/npm-boilerplate/",
+  "homepage": "https://inwebo.github.io/Grid.js/",
   "author": "inwebo-veritas",
   "license": "GPL-3.0",
   "devDependencies": {
