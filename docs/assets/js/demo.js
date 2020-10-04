@@ -49,4 +49,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const renderGrid = new RenderGrid(canvas);
     renderGrid._draw([grid, tileSize]);
 
+
+
 });
