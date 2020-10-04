@@ -1,7 +1,14 @@
 # Grid.js
-[See demo page](https://inwebo.github.io/Grid.js/)
 
-Grid and Graph ES6 implementation
+Grid and Graph ES6 implementation, [See demo page](https://inwebo.github.io/Grid.js/).
+
+## Graph
+![Graph renderer](./docs/assets/img/graph.js.png)
+Graph representation :
+ * nodes : black 
+ * white letters : node key
+ * bi-directional edges : red 
+ * directed : grey
 
 ## Installation
 ```bash
