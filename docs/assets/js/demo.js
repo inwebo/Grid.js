@@ -4,9 +4,10 @@ import RenderGrid from "./renderGrid";
 import Node from "../../../src/Graph/Node";
 import RenderGraph from "./renderGraph";
 import Graph from "../../../src/Graph/Graph";
+import renderGrid from "./renderGrid";
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    const canvas = document.getElementById('demo');
+    let canvas = document.getElementById('demo-1');
 
     // Graph
     const nodes = new Map([
@@ -37,5 +38,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const renderGraph = new RenderGraph(canvas);
 
     renderGraph.draw(graph);
+
+    // grid
+    const dimensions = new Vector2D(40,30);
+    const grid = new Grid(dimensions);
+
+    const tileSize = new Vector2D(120,120);
+
+    canvas = document.getElementById('demo-2');
+    const renderGrid = new RenderGrid(canvas);
+    renderGrid._draw([grid, tileSize]);
 
 });

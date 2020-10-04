@@ -10,27 +10,22 @@ export default class RenderGraph extends Renderer2D {
 
         const coordinates = new Map();
 
-        // Draw nodes
+        // Randomize
         for (let [k, node] of nodes) {
-            const x = rand(50, canvasSize.getX());
-            const y = rand(50, canvasSize.getY());
+            const x      = rand(50, canvasSize.getX());
+            const y      = rand(50, canvasSize.getY());
             const origin = new Vector2D(x, y);
 
             coordinates.set(k, origin);
-
         }
 
         // Draws relation
         for (let [key, node] of nodes) {
             const originStart = coordinates.get(key);
             if(node.getNeighbors().size > 0) {
-
-                console.log('Node', key, node, originStart);
-
                 node.getNeighbors().forEach((v, k) => {
 
                     const originEnd = coordinates.get(`${k}`);
-                    console.log('Neighbor', k, v, originEnd, 'IsBidirectional', node.isBiDirectional(k, key));
 
                     if(node.isBiDirectional(k, key)) {
                         this.getCtx().strokeStyle = "red";
