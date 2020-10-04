@@ -9,17 +9,11 @@
   "keywords": [
     "ES6",
     "javascript",
-    "es6-javascript",
-    "sprite",
-    "spritesheet",
-    "procedural",
-    "sim",
-    "sim city",
-    "generation"
+    "es6-javascript"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/inwebo/npm-boilerplate.git"
+    "url": "https://github.com/inwebo/grid.js.git"
   },
   "homepage": "https://inwebo.github.io/npm-boilerplate/",
   "author": "inwebo-veritas",
