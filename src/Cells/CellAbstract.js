@@ -41,9 +41,9 @@ export default class CellAbstract {
     //endregion
 
     /**
-     * @param {Vector2D|null} index
+     * @param {Vector2D} index
      */
     constructor(index = null) {
-        this._index = index || new Vector2D();
+        this._index = index;
     }
 }
