@@ -1,11 +1,13 @@
-import Renderer2D from "@inwebo/render.js/src/Renderer2D";
-import Node from "../../../src/Graph/Node.js";
 import {Vector2D} from "@inwebo/vector";
-import Graph from "../../../src/Graph/Graph";
+import Grid from "../../../src/Grid/Grid";
+import RenderGrid from "./renderGrid";
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const canvas = document.getElementById('demo');
-    // const render = new Renderer2D(canvas);
+    const render = new RenderGrid(canvas);
 
+    const dimensions = new Vector2D(10, 10);
+    const grid       = new Grid(dimensions);
 
+    render.draw(grid);
 });
