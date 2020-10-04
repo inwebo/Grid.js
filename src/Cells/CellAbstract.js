@@ -43,7 +43,7 @@ export default class CellAbstract {
     /**
      * @param {Vector2D} index
      */
-    constructor(index = null) {
+    constructor(index) {
         this._index = index;
     }
 }
