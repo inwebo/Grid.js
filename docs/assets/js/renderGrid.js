@@ -5,11 +5,7 @@ export default class RenderGrid extends Renderer2D {
         const cells = grid.getGenerator();
 
         for (let cell of cells) {
-            const offset = this.cellToCanvasCoordinates(cell, imageBitmap);
 
-            if (this.isDrawable(cell)) {
-                this.drawImageBitmap(imageBitmap, offset);
-            }
         }
 
     }
