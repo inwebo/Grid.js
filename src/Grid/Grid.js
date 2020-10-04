@@ -2,18 +2,18 @@ import {Vector2D} from "@inwebo/vector";
 import Cell from "../Cells/Cell";
 
 export default class Grid {
+
     /**
-     * @param {Vector2D} dimensions Array of rows (y) with cols (x) dimensions.
+     * @private
      */
-    constructor(dimensions) {
-        this._dimensions = dimensions;
-        const rows = new Array(dimensions.getY()).fill(null);
+    setRows() {
+        const rows = new Array(this._dimensions.getY()).fill(null);
         Object.seal(rows);
         for(let i = 0; i < rows.length; i++) {
 
             let cols = [];
 
-            for(let j = 0; j < dimensions.getX(); j++) {
+            for(let j = 0; j < this._dimensions.getX(); j++) {
                 cols.push(new Cell(new Vector2D(j, i)));
             }
             Object.seal(cols);
@@ -24,9 +24,17 @@ export default class Grid {
     }
 
     /**
+     * @param {Vector2D} dimensions Array of rows (y) with cols (x) dimensions.
+     */
+    constructor(dimensions) {
+        this._dimensions = dimensions;
+        this.setRows();
+    }
+
+    /**
      * @return {Vector2D}
      */
-    getGridSize() {
+    getDimensions() {
         return this._dimensions;
     }
 
