@@ -26,13 +26,16 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@babel/preset-es2015": "^7.0.0-beta.53",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "serialize-javascript": ">=3.1.0",
+    "@inwebo/render.js": "0.0.9",
     "lodash": "^4.17.20",
-    "serve": "^11.3.2"
+    "serialize-javascript": ">=3.1.0",
+    "serve": "^11.3.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@inwebo/vector": "0.0.9"
+  },
   "bugs": {
     "url": "https://github.com/inwebo/npm-boilerplate/issues"
   }

@@ -1,4 +1,4 @@
-# npm-boilerplate
+# Grid.js
 
 ## Installation
 ```bash

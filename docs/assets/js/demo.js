@@ -1,3 +1,7 @@
+import Renderer2D from "@inwebo/render.js/src/Renderer2D";
+
 window.addEventListener("DOMContentLoaded", (event) => {
-    alert('welcome');
+    const canvas = document.getElementById('demo');
+    const render = new Renderer2D(canvas);
+
 });
