@@ -19,10 +19,12 @@
   "author": "inwebo-veritas",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
+    "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@inwebo/render.js": "0.0.9",
+    "glob": "^7.1.6",
     "lodash": "^4.17.20",
+    "path": "^0.12.7",
     "serialize-javascript": ">=3.1.0",
     "serve": "^11.3.2",
     "webpack": "^4.43.0",
