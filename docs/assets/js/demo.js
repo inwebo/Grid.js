@@ -6,6 +6,8 @@ import RenderGraph from "./renderGraph";
 import Graph from "../../../src/Graph/Graph";
 import renderGrid from "./renderGrid";
 
+import {demoGrid} from "./demo-grid";
+
 window.addEventListener("DOMContentLoaded", (event) => {
     let canvas = document.getElementById('demo-1');
 
@@ -50,5 +52,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
     renderGrid._draw([grid, tileSize]);
 
 
-
+    demoGrid();
 });
