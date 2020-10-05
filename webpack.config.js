@@ -1,16 +1,23 @@
 const path = require('path');
+const glob = require('glob');
 
 module.exports = {
     entry: {
         main: './src/index.js',
-        demo: './docs/assets/js/demo.js'
+        app: './docs/assets/js/app.js',
+        demos: glob.sync('./docs/assets/js/demos/*')
     },
-
     output: {
         filename: (pathData) => {
-            return (pathData.chunk.name === 'demo') ? 'docs/assets/js/[name].min.js' : 'dist/[name].min.js';
+            switch (pathData.chunk.name) {
+                case 'app':
+                    return 'docs/assets/js/[name].min.js';
+                case 'demos':
+                    return 'docs/assets/js/demos/[name].min.js';
+                case 'main':
+                    return 'dist/[name].min.js';
+            }
         },
         path: path.resolve(__dirname, '.'),
     },
-
 };
