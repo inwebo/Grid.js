@@ -10,12 +10,14 @@ module.exports = {
     output: {
         filename: (pathData) => {
             switch (pathData.chunk.name) {
+                case 'main':
+                    return 'dist/[name].min.js';
                 case 'app':
                     return 'docs/assets/js/[name].min.js';
                 case 'demos':
                     return 'docs/assets/js/demos/[name].min.js';
-                case 'main':
-                    return 'dist/[name].min.js';
+                default:
+                    break;
             }
         },
         path: path.resolve(__dirname, '.'),
