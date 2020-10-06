@@ -15,35 +15,51 @@
         h1, h2, h3 {
             line-height:1.2
         }
+
     </style>
 </head>
 <body>
 <h1>Grid.js</h1>
-<h2>Grid</h2>
+<h2>Demo</h2>
 <figure>
     <canvas id="demo-1" width="640" height="480" style="background-color: #494949; width: 100%"></canvas>
-    <figcaption>Grid representation : Cell dimensions = 16px x 16px, rows = 30, cols = 40</figcaption>
-</figure>
-<form>
-    <label for="cols">Cols:</label>
-    <input type="range" id="cols" name="vol" min="1" max="50" value="40">
-    &nbsp;
-    <label for="rows">Rows:</label>
-    <input type="range" id="rows" name="vol" min="1" max="50" value="30">
-    &nbsp;
-    <label for="tile-width">Tile width:</label>
-    <input type="range" id="tile-width" name="vol" min="1" max="50" value="16">
-    &nbsp;
-    <label for="tile-height">Tile height:</label>
-    <input type="range" id="tile-height" name="vol" min="1" max="50" value="16">
-    &nbsp;
-    <label for="offset-origin-x">Offset origin X:</label>
-    <input type="range" id="offset-origin-x" name="vol" min="1" max="50">
-    &nbsp;
-    <label for="offset-origin-y">Offset origin Y:</label>
-    <input type="range" id="offset-origin-y" name="vol" min="1" max="50">
+    <figcaption>Cols: <span id="cols-display">40</span>, Rows: <span id="rows-display">30</span>, Tile: <span id="width-display">30</span>px x <span id="height-display">40</span>px, Offset: x <span id="offsetX-display">40</span>px, y <span id="offsetY-display">40</span>px</figcaption>
 
-</form>
+    <form>
+        <fieldset>
+            <legend>Grid</legend>
+            <label for="cols">Cols</label>
+            <input type="range" id="cols" name="cols" min="1" max="50" value="40">
+            <label for="rows">Rows</label>
+            <input type="range" id="rows" name="rows" min="1" max="50" value="30">
+        </fieldset>
+        <fieldset>
+            <legend>Tile (px)</legend>
+            <label for="tile-width">Width</label>
+            <input type="range" id="tile-width" name="tile-width" min="1" max="50" value="16">
+            <label for="tile-height">Height</label>
+            <input type="range" id="tile-height" name="tile-height" min="1" max="50" value="16">
+        </fieldset>
+        <fieldset>
+            <legend>Offset (px)</legend>
+            <label for="cell-offset-x">X</label>
+            <input type="range" id="cell-offset-x" name="cell-offset-x" min="-10" max="10"  value="2">
+            <label for="cell-offset-y">Y</label>
+            <input type="range" id="cell-offset-y" name="cell-offset-y" min="-10" max="10"  value="2">
+        </fieldset>
+        <fieldset>
+            <legend>Colours</legend>
+            <input type="color" id="colour1" name="colour1"
+                   value="#766273">
+            <label for="colour1">Col.1</label>
+            <br>
+            <input type="color" id="colour2" name="colour2"
+                   value="#B57786">
+            <label for="colour1">Col.2</label>
+        </fieldset>
+    </form>
+</figure>
+
 <script type="application/javascript" src="./assets/js/app.min.js"></script>
 </body>
 </html>
