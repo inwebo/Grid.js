@@ -3,35 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Grid.js</title>
-    <style type="text/css">
-        body {
-            margin:5% auto;
-            max-width:90%;
-            line-height:1.6;
-            font-size:18px;
-            color:#444;
-            padding:0 1em;
-        }
-        h1, h2, h3 {
-            line-height:1.2
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <h1>Grid.js</h1>
 <h2>Demo</h2>
 <figure>
-    <canvas id="demo-1" width="640" height="480" style="background-color: #494949; width: 100%"></canvas>
+    <canvas id="demo-1" width="640" height="480" style="background-color: #494949;"></canvas>
     <figcaption>Cols: <span id="cols-display">40</span>, Rows: <span id="rows-display">30</span>, Tile: <span id="width-display">30</span>px x <span id="height-display">40</span>px, Offset: x <span id="offsetX-display">40</span>px, y <span id="offsetY-display">40</span>px</figcaption>
 
     <form>
         <fieldset>
             <legend>Grid</legend>
-            <label for="cols">Cols</label>
-            <input type="range" id="cols" name="cols" min="1" max="50" value="40">
-            <label for="rows">Rows</label>
-            <input type="range" id="rows" name="rows" min="1" max="50" value="30">
+            <label for="cols">Cols</label>&nbsp;<input type="range" id="cols" name="cols" min="1" max="50" value="40">
+            <label for="rows">Rows</label>&nbsp;<input type="range" id="rows" name="rows" min="1" max="50" value="30">
         </fieldset>
         <fieldset>
             <legend>Tile (px)</legend>
