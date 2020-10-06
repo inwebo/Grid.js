@@ -18,7 +18,7 @@ const demo1 = () => {
 
     console.log(form);
 
-    const dimensions = new Vector2D(form.grid.cols, form.grid.rows);
+    const dimensions = new Vector2D(30, 40);
     const grid       = new Grid(dimensions);
 
     const tileSize   = new Vector2D(form.tile.width, form.tile.height);
