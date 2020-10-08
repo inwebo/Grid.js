@@ -1,5 +1,8 @@
 import {Vector2D} from "@inwebo/vector";
 
+/**
+ * A cell knows its matrix's position (_index), if is in odd or even row and col. You MUST not instantiate it.
+ */
 export default class CellAbstract {
 
     /**

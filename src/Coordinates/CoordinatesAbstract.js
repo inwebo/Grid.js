@@ -1,17 +1,20 @@
 import {Vector2D} from "@inwebo/vector";
 
+/**
+ * Matrix coordinates, knows its neighbors
+ */
 export default class CoordinatesAbstract {
     /**
-     * @param {Vector2D} vector
+     * @param {Vector2D} position Grid position (x, y)
      */
-    constructor(vector) {
-        this._center    = vector;
+    constructor(position) {
+        this._position  = position;
         this._neighbors = null;
     }
 
     /**
      * Return all neighbors
-     * @param {boolean} simple
+     * @param {boolean} simple true return N,E,S,W false return N, NW, W, SW, S, SE, E, NE
      * @return {Map}
      */
     getNeighbors(simple = true) {
@@ -37,10 +40,11 @@ export default class CoordinatesAbstract {
     /**
      * @returns {Vector2D}
      */
-    getCenter() {
-        return this._center;
+    getPosition() {
+        return this._position;
     }
 
+    // region override
     /**
      * @throws
      */
@@ -96,4 +100,5 @@ export default class CoordinatesAbstract {
     getNorthWest() {
         throw 'Do not instanciate me !';
     }
+    // endregion
 }
