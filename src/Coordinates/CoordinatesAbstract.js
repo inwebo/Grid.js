@@ -14,24 +14,20 @@ export default class CoordinatesAbstract {
 
     /**
      * Return all neighbors
-     * @param {boolean} simple true return N,E,S,W false return N, NW, W, SW, S, SE, E, NE
      * @return {Map}
      */
-    getNeighbors(simple = true) {
+    getNeighbors() {
         if(this._neighbors === null) {
             this._neighbors = new Map([
                 ['N',  this.getNorth()],
+                ['NW',  this.getNorthWest()],
                 ['W',  this.getWest()],
+                ['SW',  this.getSouthWest()],
                 ['S',  this.getSouth()],
+                ['SE',  this.getSouthEast()],
                 ['E',  this.getEast()],
+                ['NE',  this.getNorthEast()],
             ]);
-
-            if(false === simple) {
-                this._neighbors.set('NW', this.getNorthWest());
-                this._neighbors.set('SW', this.getSouthWest());
-                this._neighbors.set('SE', this.getSouthEast());
-                this._neighbors.set('NE', this.getNorthEast());
-            }
         }
 
         return this._neighbors;
