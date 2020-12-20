@@ -4,7 +4,8 @@
   "description": "ES6 Grid implementation",
   "main": "/src/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "webpack --mode development && nyc --reporter=html --reporter=text mocha dist/test.min.js"
   },
   "keywords": [
     "ES6",
