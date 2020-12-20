@@ -1,61 +1,72 @@
 import CoordinatesAbstract from "./CoordinatesAbstract";
 import {Vector2D} from "@inwebo/vector";
 
+/**
+ * Get Cartesian's neighbor's coordinates.
+ */
 export default class Cartesian extends CoordinatesAbstract {
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getNorth() {
-        return Vector2D.add(this._center, new Vector2D(0, -1));
+    getNorth(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(0, distance * -1));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthEast() {
-        return Vector2D.add(this._center, new Vector2D(1, 1));
+    getNorthEast(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance * -1));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getEast() {
-        return Vector2D.add(this._center, new Vector2D(1, 0));
+    getEast(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, 0));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthEast() {
-        return Vector2D.add(this._center, new Vector2D(1, -1));
+    getSouthEast(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouth() {
-        return Vector2D.add(this._center, new Vector2D(0, -1));
+    getSouth(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(0, distance));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthWest() {
-        return Vector2D.add(this._center, new Vector2D(-1, -1));
+    getSouthWest(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getWest() {
-        return Vector2D.add(this._center, new Vector2D(-1, 0));
+    getWest(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, 0));
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthWest() {
-        return Vector2D.add(this._center, new Vector2D(1, -1));
+    getNorthWest(distance = 1) {
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance * -1));
     }
-}
+};

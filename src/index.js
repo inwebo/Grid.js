@@ -3,7 +3,7 @@ import Cell from "./Cells/Cell";
 import CellAbstract from "./Cells/CellAbstract";
 
 // Converters
-import ToPixels from "./Converters/ToPixels";
+import Pixels from "./Converters/Pixels";
 
 // Coordinates
 import Cartesian from "./Coordinates/Cartesian";
@@ -17,7 +17,7 @@ export {
     Cell,
     CellAbstract,
 
-    ToPixels,
+    Pixels,
 
     Cartesian,
     CoordinatesAbstract,
