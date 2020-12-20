@@ -46,58 +46,66 @@ export default class CoordinatesAbstract {
 
     // region override
     /**
+     * @param {number} distance
      * @throws
      */
-    getNorth() {
+    getNorth(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthEast() {
+    getNorthEast(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getEast() {
+    getEast(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthEast() {
+    getSouthEast(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouth() {
+    getSouth(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthWest() {
+    getSouthWest(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getWest() {
+    getWest(distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthWest() {
+    getNorthWest(distance = 1) {
         throw 'Do not instanciate me !';
     }
     // endregion
