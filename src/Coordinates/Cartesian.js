@@ -11,7 +11,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getNorth(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(0, distance * -1));
+        return Vector2D.add(this._position.clone(), new Vector2D(0, distance * -1));
     }
 
     /**
@@ -19,7 +19,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getNorthEast(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance, distance));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance * -1));
     }
 
     /**
@@ -27,7 +27,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getEast(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance, 0));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, 0));
     }
 
     /**
@@ -35,7 +35,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getSouthEast(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance, distance * -1));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance));
     }
 
     /**
@@ -43,7 +43,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getSouth(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(0, distance * -1));
+        return Vector2D.add(this._position.clone(), new Vector2D(0, distance));
     }
 
     /**
@@ -51,7 +51,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getSouthWest(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance * -1, distance * -1));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance));
     }
 
     /**
@@ -59,7 +59,7 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getWest(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance * -1, 0));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, 0));
     }
 
     /**
@@ -67,6 +67,6 @@ export default class Cartesian extends CoordinatesAbstract {
      * @return {Vector2D}
      */
     getNorthWest(distance = 1) {
-        return Vector2D.add(this._position, new Vector2D(distance, distance * -1));
+        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance * -1));
     }
 };
