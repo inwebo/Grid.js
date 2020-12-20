@@ -1,4 +1,4 @@
-import {Cell, Grid} from "../src";
+import {Cartesian, Cell, Grid} from "../src";
 import {Vector2D} from "@inwebo/vector";
 
 const assert = require('assert');
@@ -107,5 +107,42 @@ describe('Cell', () => {
 
     it('cell1.isOddCol()', () => {
         assert.equal(cell1.isOddCol(), false);
+    });
+});
+
+describe('Coordinates', () => {
+    const v1 = new Vector2D(3,3);
+    const c1 = new Cartesian(v1);
+
+    describe('Cartesian', () => {
+        describe('Simple', () => {
+            let n1 = c1.getNeighbors();
+
+            it('N,NE,E,SE,S,SW,W', () => {
+                assert.equal(n1.get('N').getX() === 3, true);
+                assert.equal(n1.get('N').getY() === 2, true);
+
+                assert.equal(n1.get('NW').getX() === 2, true);
+                assert.equal(n1.get('NW').getY() === 2, true);
+
+                assert.equal(n1.get('NE').getX() === 4, true);
+                assert.equal(n1.get('NE').getY() === 2, true);
+
+                assert.equal(n1.get('E').getX() === 4, true);
+                assert.equal(n1.get('E').getY() === 3, true);
+
+                assert.equal(n1.get('SE').getX() === 4, true);
+                assert.equal(n1.get('SE').getY() === 4, true);
+
+                assert.equal(n1.get('S').getX() === 3, true);
+                assert.equal(n1.get('S').getY() === 4, true);
+
+                assert.equal(n1.get('SW').getX() === 2, true);
+                assert.equal(n1.get('SW').getY() === 4, true);
+
+                assert.equal(n1.get('W').getX() === 2, true);
+                assert.equal(n1.get('W').getY() === 3, true);
+            });
+        });
     });
 });
