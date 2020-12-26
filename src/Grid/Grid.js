@@ -51,7 +51,7 @@ export default class Grid {
     constructor(dimensions, defaultCellValue = null,  fnFill = null) {
         this._dimensions       = dimensions;
         this._defaultCellValue = defaultCellValue;
-        this._fnFill           = fnFill;
+        this._fnFill           = fnFill || (() => {return this._defaultCellValue});
 
         this.setRows();
     }
