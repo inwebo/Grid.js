@@ -136,7 +136,7 @@ export default class Grid {
 
     /**
      * @param {function} callback
-     * @return {Cell}
+     * @return {Cell|boolean}
      */
     assertCells(callback) {
 
@@ -151,6 +151,8 @@ export default class Grid {
                 }
             }
         }
+
+        return false;
     }
 
     /**
