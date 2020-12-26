@@ -7,20 +7,16 @@ export default class Grid {
      * @private
      */
     setRows() {
-        const rows = new Array(this._dimensions.getY()).fill(null);
+        const rows = new Array(this._dimensions.getY()).fill(this._defaultCellValue);
         Object.seal(rows);
         for(let i = 0; i < rows.length; i++) {
 
             let cols = [];
 
             for(let j = 0; j < this._dimensions.getX(); j++) {
-                let value = this._defaultCellValue;
-
                 if(typeof this._fnFill === 'function') {
-                    value = this._fnFill.call(this,[j, i]);
+                    cols.push(this._fnFill.call(this,[j, i]));
                 }
-
-                cols.push(value);
             }
             Object.seal(cols);
             rows[i] = cols;
@@ -106,6 +102,23 @@ export default class Grid {
      */
     getCellByVector(vector2d) {
         return this.getCell(vector2d.getX(), vector2d.getY());
+    }
+
+    /**
+     * @param {number} col
+     * @param {number} row
+     * @param {function} callback
+     * @return {boolean}
+     */
+    assertCell(col, row, callback) {
+        if(this.hasCell(col, row)) {
+            const cell = this.getCell(col, row);
+            if(typeof callback === 'function') {
+                return callback.call(this, cell) === true;
+            }
+        }
+
+        return false;
     }
 
     /**
