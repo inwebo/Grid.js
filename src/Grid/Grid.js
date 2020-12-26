@@ -142,11 +142,12 @@ export default class Grid {
     }
 
     /**
+     * Return first cell to validate callback return
+     *
      * @param {function} callback
      * @return {Cell|boolean}
      */
     assertCells(callback) {
-
         const cells = this.getGenerator();
 
         for(const cell in cells) {
