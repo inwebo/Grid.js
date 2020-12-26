@@ -135,9 +135,28 @@ export default class Grid {
     }
 
     /**
+     * @param {function} callback
+     * @return {Cell}
+     */
+    assertCells(callback) {
+
+        const cells = this.getGenerator();
+
+        for(const cell in cells) {
+            if(typeof callback === 'function') {
+                const assertCell = callback.call(this, cell) === true;
+
+                if(true === assertCell) {
+                    return cell;
+                }
+            }
+        }
+    }
+
+    /**
      * Return all cells by reference
      *
-     * @return {Generator<Cell>}
+     * @return {Generator<[Cell]>}
      */
     * getGenerator() {
         for(const row of this._rows) {
