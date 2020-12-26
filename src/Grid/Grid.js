@@ -20,17 +20,17 @@ export default class Grid {
     setRows() {
         const rows = new Array(this._dimensions.getY()).fill(this._defaultCellValue);
         Object.seal(rows);
-        for(let i = 0; i < rows.length; i++) {
+        for(let y = 0; y < rows.length; y++) {
 
             let cols = [];
 
-            for(let j = 0; j < this._dimensions.getX(); j++) {
+            for(let x = 0; x < this._dimensions.getX(); x++) {
                 if(typeof this._fnFill === 'function') {
-                    cols.push(this._fnFill.call(this,[j, i]));
+                    cols.push(this._fnFill.call(this,[x, y]));
                 }
             }
             Object.seal(cols);
-            rows[i] = cols;
+            rows[y] = cols;
         }
 
         this._rows = rows;
