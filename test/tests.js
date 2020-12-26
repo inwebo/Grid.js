@@ -5,7 +5,9 @@ const assert = require('assert');
 const expect = require('chai').expect;
 const chai = require('chai');
 
-const grid = new Grid(new Vector2D(9,21));
+const grid = new Grid(new Vector2D(9,21), null,([col, row]) => {
+    return new Cell(new Vector2D(col, row));
+});
 
 describe('Grid', () => {
 
@@ -91,7 +93,7 @@ describe('Grid', () => {
 });
 
 const cell1 = grid.getCell(0, 1);
-
+console.log(cell1);
 describe('Cell', () => {
     it('cell1.isEvenRow()', () => {
         assert.equal(cell1.isEvenRow(), false);
