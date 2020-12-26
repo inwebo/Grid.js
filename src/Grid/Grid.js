@@ -8,7 +8,7 @@ export default class Grid {
      */
     fill(fnFill) {
         if(typeof this._fnFill === 'function') {
-            this._rows   = null;
+            this._rows   = this._defaultCellValue;
             this._fnFill = fnFill;
             this.setRows();
         }
