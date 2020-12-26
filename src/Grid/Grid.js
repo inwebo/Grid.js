@@ -14,8 +14,13 @@ export default class Grid {
             let cols = [];
 
             for(let j = 0; j < this._dimensions.getX(); j++) {
-                // cols.push(this._cellFactory(j, i));
-                cols.push(new Cell(new Vector2D(j, i)));
+                let value = this._defaultCellValue;
+
+                if(typeof this._fnFill === 'function') {
+                    value = this._fnFill.call(this,[j, i]);
+                }
+
+                cols.push(value);
             }
             Object.seal(cols);
             rows[i] = cols;
@@ -26,9 +31,14 @@ export default class Grid {
 
     /**
      * @param {Vector2D} dimensions Array of rows (y) with cols (x) dimensions.
+     * @param {*} defaultCellValue Default cell value
+     * @param {function|null} fnFill Filler function callback
      */
-    constructor(dimensions) {
-        this._dimensions = dimensions;
+    constructor(dimensions, defaultCellValue = null,  fnFill = null) {
+        this._dimensions       = dimensions;
+        this._defaultCellValue = defaultCellValue;
+        this._fnFill           = fnFill;
+
         this.setRows();
     }
 
