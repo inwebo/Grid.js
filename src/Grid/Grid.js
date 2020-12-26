@@ -50,8 +50,8 @@ export default class Grid {
      */
     constructor(dimensions, defaultCellValue = null,  fnFill = null) {
         this._dimensions       = dimensions;
-        this._defaultCellValue = defaultCellValue;
-        this._fnFill           = fnFill || (() => {return this._defaultCellValue});
+        this._defaultCellValue = defaultCellValue || null;
+        this._fnFill           = fnFill           || (() => {return this._defaultCellValue});
 
         this.setRows();
     }
@@ -61,6 +61,18 @@ export default class Grid {
      */
     getDimensions() {
         return this._dimensions;
+    }
+
+    /**
+     * @param {number} row
+     * @return {Array|boolean}
+     */
+    getRow(row) {
+        if(true === this.hasRow(row)) {
+            return this._rows[row];
+        }
+
+        return false;
     }
 
     /**
@@ -142,7 +154,7 @@ export default class Grid {
     }
 
     /**
-     * Return first cell to validate callback return
+     * Return first cell to validate callback's return true
      *
      * @param {function} callback
      * @return {Cell|boolean}
