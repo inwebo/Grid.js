@@ -1,6 +1,7 @@
 import {Vector2D} from "@inwebo/vector";
 import Grid from "../../../../src/Grid/Grid";
 import RenderGrid from "../renderGrid";
+import {Cell} from "../../../../src";
 
 const demo1 = () => {
     const canvas = document.getElementById('demo-1');
@@ -40,7 +41,9 @@ const demo1 = () => {
     form.display.offsetY.innerHTML = form.cell.offsetY.value;
 
     const dimensions = new Vector2D(parseInt(form.grid.cols.value), parseInt(form.grid.rows.value));
-    const grid       = new Grid(dimensions);
+    const grid       = new Grid(dimensions, null, ([col, row]) => {
+        return new Cell(new Vector2D(col, row));
+    });
 
     const cellOffset = new Vector2D(parseInt(form.cell.offsetX.value), parseInt(form.cell.offsetY.value));
 
@@ -48,6 +51,12 @@ const demo1 = () => {
     const renderGrid = new RenderGrid(canvas);
 
     renderGrid._draw([grid, tileSize, cellOffset, form.colours.first.value, form.colours.second.value]);
+
+    const ac = grid.assertCell(0,9, (cell) => {
+        return cell !== undefined;
+    })
+
+    console.log(ac);
 
 };
 
