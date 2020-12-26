@@ -4,6 +4,17 @@ import Cell from "../Cells/Cell";
 export default class Grid {
 
     /**
+     * @param {function} fnFill
+     */
+    fill(fnFill) {
+        if(typeof this._fnFill === 'function') {
+            this._rows   = null;
+            this._fnFill = fnFill;
+            this.setRows();
+        }
+    }
+
+    /**
      * @private
      */
     setRows() {
@@ -105,9 +116,11 @@ export default class Grid {
     }
 
     /**
+     * Test if the callback function return true
+     *
      * @param {number} col
      * @param {number} row
-     * @param {function} callback
+     * @param {function} callback Must return a boolean, should be true
      * @return {boolean}
      */
     assertCell(col, row, callback) {
