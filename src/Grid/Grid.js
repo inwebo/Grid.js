@@ -4,6 +4,16 @@ import Cell from "../Cells/Cell";
 export default class Grid {
 
     /**
+     * @param {number} x
+     * @param {number} y
+     * @return {Cell}
+     * @private
+     */
+    _cellFactory(x, y) {
+        return new Cell(new Vector2D(x, y));
+    }
+
+    /**
      * @private
      */
     setRows() {
@@ -14,7 +24,8 @@ export default class Grid {
             let cols = [];
 
             for(let j = 0; j < this._dimensions.getX(); j++) {
-                cols.push(new Cell(new Vector2D(j, i)));
+                cols.push(this._cellFactory(j, i));
+                // cols.push(new Cell(new Vector2D(j, i)));
             }
             Object.seal(cols);
             rows[i] = cols;
