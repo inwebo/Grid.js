@@ -56,7 +56,11 @@ const demo1 = () => {
         return cell !== undefined;
     })
 
-    console.log(ac);
+    grid.fill(() => {
+        return false;
+    });
+
+    console.log(grid.getRows());
 
 };
 
