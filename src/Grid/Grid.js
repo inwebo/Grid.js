@@ -46,7 +46,7 @@ export default class Grid {
     /**
      * @param {Vector2D} dimensions Array of rows (y) with cols (x) dimensions.
      * @param {*} defaultCellValue Default cell value
-     * @param {function|null} fnFill Filler function callback
+     * @param {function|null} fnFill Filler function callback, default return _defaultCellValue value else return's callback
      */
     constructor(dimensions, defaultCellValue = null,  fnFill = null) {
         this._dimensions       = dimensions;
