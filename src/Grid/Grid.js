@@ -4,6 +4,13 @@ import Cell from "../Cells/Cell";
 export default class Grid {
 
     /**
+     * @param {*} value
+     */
+    setDefaultValue(value) {
+        this._defaultCellValue = value;
+    }
+
+    /**
      * @param {function} fnFill
      */
     fill(fnFill) {
