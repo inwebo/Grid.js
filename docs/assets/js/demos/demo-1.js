@@ -86,6 +86,8 @@ const demo1 = () => {
 
     const MAX_SIZE = 3;
 
+    const result = [];
+
     /**
      * @param {Grid} grid
      * @param {C} start
@@ -114,7 +116,7 @@ const demo1 = () => {
 
         console.log('FreeX', freeX, 'FreeY', freeY);
 
-        let _currentMax = ((freeX > freeY) ? freeX : freeY);
+        let _currentMax = ((freeX > freeY) ? freeY : freeX);
         _currentMax = (_currentMax > MAX_SIZE) ? MAX_SIZE : _currentMax;
 
         const maxRand = rand(1, _currentMax);
@@ -143,7 +145,7 @@ const demo1 = () => {
         return cell.getData() === null;
     });
 
-    populateGrid(g, start);
+    // populateGrid(g, start);
 
     // var s = g.assertCells((cell) => {
     //     return cell.getData() === null;
@@ -161,7 +163,7 @@ const demo1 = () => {
     //     populateGrid(g, s);
     // }
 
-    console.log(g.getRows());
+    // console.log(g.getRows());
 
     while ( g.assertCells((cell) => {
         return cell.getData() === null;
