@@ -128,11 +128,11 @@ const demo1 = () => {
             }
         }
 
-        const s = g.assertCells((cell) => {
-            return cell.getData() === null;
-        });
-
-        console.log('Next cell', s);
+        // const s = g.assertCells((cell) => {
+        //     return cell.getData() === null;
+        // });
+        //
+        // console.log('Next cell', s);
 
         // if(s.getData() === null) {
         //     populateGrid(g, s);
