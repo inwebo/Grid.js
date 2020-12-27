@@ -13,7 +13,7 @@ describe('Grid construct', () => {
     const g = new Grid(new Vector2D(9,9));
 
     it('grid s cells are not null', () => {
-        assert.equal(grid.assertCells((cell) => {
+        assert.equal(g.assertCells((cell) => {
             return cell !== null;
         }), false);
     });
