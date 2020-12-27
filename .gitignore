@@ -4,3 +4,4 @@ yarn-error.log
 .nyc_output
 coverage
 package-lock.json
+dist/test.min.js

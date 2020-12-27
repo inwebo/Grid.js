@@ -5,7 +5,19 @@ const assert = require('assert');
 const expect = require('chai').expect;
 const chai = require('chai');
 
-const grid = new Grid(new Vector2D(9,21));
+const grid = new Grid(new Vector2D(9,21), null,([col, row]) => {
+    return new Cell(new Vector2D(col, row));
+});
+
+describe('Grid construct', () => {
+    const g = new Grid(new Vector2D(9,9));
+
+    it('grid s cells are not null', () => {
+        assert.equal(g.assertCells((cell) => {
+            return cell !== null;
+        }), false);
+    });
+});
 
 describe('Grid', () => {
 
