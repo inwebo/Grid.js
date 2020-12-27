@@ -65,11 +65,18 @@ export default class Grid {
 
     /**
      * @param {number} row
+      * @param {number} startSlice
      * @return {Array|boolean}
      */
-    getRow(row) {
+    getRow(row, startSlice = 0) {
         if(true === this.hasRow(row)) {
-            return this._rows[row];
+            const rows = this._rows[row];
+
+            if(typeof startSlice === 'number' && startSlice <= this.getDimensions().getX()) {
+                return rows.slice(startSlice);
+            } else {
+                return rows;
+            }
         }
 
         return false;
