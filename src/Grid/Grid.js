@@ -72,7 +72,7 @@ export default class Grid {
         if(true === this.hasRow(row)) {
             const rows = this._rows[row];
 
-            if(typeof startSlice === 'number' && startSlice <= this.getDimensions().getX()) {
+            if(typeof startSlice === 'number' && startSlice < this.getDimensions().getX()) {
                 return rows.slice(startSlice);
             } else {
                 return rows;
@@ -133,7 +133,12 @@ export default class Grid {
         return false;
     }
 
-    getCol(x) {
+    /**
+     * @param {number} x
+     * @param {number} startSlice
+     * @return {[]}
+     */
+    getCol(x, startSlice = 0) {
         const col = [];
 
         let _row = 0,
@@ -148,6 +153,12 @@ export default class Grid {
                 _col += 1;
             }
             _col  = 0;
+        }
+
+        if(typeof startSlice === 'number' && startSlice < this.getDimensions().getX()) {
+            return col.slice(startSlice);
+        } else {
+            return col;
         }
 
         return col;
