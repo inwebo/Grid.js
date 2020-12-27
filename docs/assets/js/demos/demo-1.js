@@ -119,13 +119,13 @@ const demo1 = () => {
 
     const MAX_SIZE = 3;
 
-    const _currentMax = (freeX >= MAX_SIZE) ? MAX_SIZE : freeX;
+    const _currentMax = (freeX > MAX_SIZE) ? MAX_SIZE : freeX;
 
     const maxRand = rand(1, _currentMax);
     console.log(maxRand)
     const c = char.shift();
-    for(let x = 0; x < freeX; x++) {
-        for(let y = 0; y < freeY; y++) {
+    for(let x = 0; x < maxRand; x++) {
+        for(let y = 0; y < maxRand; y++) {
             if(x <= maxRand && y <= maxRand) {
                 g.getCell(x, y).setData(c);
             }
