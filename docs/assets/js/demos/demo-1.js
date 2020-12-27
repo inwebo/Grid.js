@@ -53,6 +53,14 @@ const demo1 = () => {
     renderGrid._draw([grid, tileSize, cellOffset, form.colours.first.value, form.colours.second.value]);
 
     class C extends Cell {
+        getType() {
+            return this._type;
+        }
+
+        setType(type) {
+            this._type = type;
+        }
+
         setData(data) {
             this._data = data;
         }
@@ -61,9 +69,19 @@ const demo1 = () => {
             return this._data;
         }
 
+        getSize() {
+            return this._size;
+        }
+
+        setSize(size) {
+            this._size = size;
+        }
+
         constructor(vector) {
             super(vector);
             this._data = null;
+            this._type = null;
+            this._size = null;
         }
     }
 
@@ -85,6 +103,8 @@ const demo1 = () => {
     const rand = (a,b) => a+(b-a+1)*crypto.getRandomValues(new Uint32Array(1))[0]/2**32|0;
 
     const MAX_SIZE = 3;
+
+    const TYPES = ['commercial', 'residential'];
 
     const result = [];
 
@@ -122,10 +142,17 @@ const demo1 = () => {
         const maxRand = rand(1, _currentMax);
         console.log('Max rand', maxRand)
         const c = char.shift();
+
+        const type = (rand(1, 2) %2 ===0) ? TYPES[0]: TYPES[1];
+console.log(type);
+        start.setSize(maxRand);
+        result.push(start);
+
         for(let x = 0; x < maxRand; x++) {
             for(let y = 0; y < maxRand; y++) {
                 if(x <= maxRand && y <= maxRand) {
                     g.getCell(start.getIndex().getX() + x, start.getIndex().getY() + y).setData(c);
+                    g.getCell(start.getIndex().getX() + x, start.getIndex().getY() + y).setType(type);
                 }
             }
         }
@@ -139,31 +166,9 @@ const demo1 = () => {
         // if(s.getData() === null) {
         //     populateGrid(g, s);
         // }
+
+        // console.log(result);
     };
-
-    const start = g.assertCells((cell) => {
-        return cell.getData() === null;
-    });
-
-    // populateGrid(g, start);
-
-    // var s = g.assertCells((cell) => {
-    //     return cell.getData() === null;
-    // });
-    //
-    // if(s !== false) {
-    //     populateGrid(g, s);
-    // }
-    //
-    // var s = g.assertCells((cell) => {
-    //     return cell.getData() === null;
-    // });
-    //
-    // if(s !== false) {
-    //     populateGrid(g, s);
-    // }
-
-    // console.log(g.getRows());
 
     while ( g.assertCells((cell) => {
         return cell.getData() === null;
@@ -176,6 +181,42 @@ const demo1 = () => {
     }
 
     console.log(g.getRows());
+    //
+    // const c = document.getElementById('demo-2');
+    //
+    // var context = c.getContext("2d");
+    //
+    // context.mozImageSmoothingEnabled    = false;
+    // context.webkitImageSmoothingEnabled = false;
+    // context.msImageSmoothingEnabled     = false;
+    // context.imageSmoothingEnabled       = false;
+    //
+    // for(const cell of g.getGenerator()) {
+    //
+    //     if(cell.getType() === 'commercial') {
+    //         context.fillStyle = "blue";
+    //     } else {
+    //         context.fillStyle = "green";
+    //     }
+    //
+    //     context.fillRect(cell.getIndex().getX(), cell.getIndex().getY(), 1, 1);
+    //
+    // }
+
+    const p    = [];
+    const pixels = g.getGenerator();
+
+    let squares = 0;
+
+    for(const pixel of pixels) {
+        if(pixel.getSize() !== null) {
+            p.push(pixel);
+
+            squares += pixel.getSize() * pixel.getSize();
+        }
+    }
+
+    console.log(p, squares);
 };
 
 export default demo1;
