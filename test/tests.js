@@ -9,6 +9,16 @@ const grid = new Grid(new Vector2D(9,21), null,([col, row]) => {
     return new Cell(new Vector2D(col, row));
 });
 
+describe('Grid construct', () => {
+    const g = new Grid(new Vector2D(9,9));
+
+    it('grid s cells are not null', () => {
+        assert.equal(grid.assertCells((cell) => {
+            return cell !== null;
+        }), false);
+    });
+});
+
 describe('Grid', () => {
 
         it('grid.getDimensions().getX() = 9', () => {
@@ -93,7 +103,7 @@ describe('Grid', () => {
 });
 
 const cell1 = grid.getCell(0, 1);
-console.log(cell1);
+
 describe('Cell', () => {
     it('cell1.isEvenRow()', () => {
         assert.equal(cell1.isEvenRow(), false);
