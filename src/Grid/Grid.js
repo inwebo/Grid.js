@@ -126,6 +126,26 @@ export default class Grid {
         return false;
     }
 
+    getCol(x) {
+        const col = [];
+
+        let _row = 0,
+            _col = 0;
+
+        for(const row of this._rows) {
+            _row += 1;
+            for(const cell of row) {
+                if(x === _col) {
+                    col.push(cell);
+                }
+                _col += 1;
+            }
+            _col  = 0;
+        }
+
+        return col;
+    }
+
     /**
      * @param {Vector2D} vector2d
      * @return {Cell|boolean}
@@ -162,7 +182,7 @@ export default class Grid {
     assertCells(callback) {
         const cells = this.getGenerator();
 
-        for(const cell in cells) {
+        for(const cell of cells) {
             if(typeof callback === 'function') {
                 const assertCell = callback.call(this, cell) === true;
 
