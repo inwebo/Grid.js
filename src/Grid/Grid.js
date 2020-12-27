@@ -124,13 +124,14 @@ export default class Grid {
      * @param {int} x col
      * @param {int} y row
      * @return {Cell|boolean}
+     * @throws If cell is not accessible (out of bounds)
      */
     getCell(x, y) {
         if(this.hasCell(x, y)) {
             return this._rows[y][x];
+        } else {
+            throw `cell at (${x}, ${y}) is not accessible, max (${this.getDimensions().getX() - 1}, ${this.getDimensions().getY() - 1})`;
         }
-
-        return false;
     }
 
     /**
