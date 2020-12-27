@@ -1,6 +1,6 @@
 {
   "name": "@inwebo/grid.js",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "ES6 Grid implementation",
   "main": "/src/index.js",
   "scripts": {
