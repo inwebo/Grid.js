@@ -89,7 +89,7 @@ const demo1 = () => {
      * Subject
      * @type {Grid}
      */
-    const g = new Grid(new Vector2D(5,5), null, ([x, y]) => {
+    const g = new Grid(new Vector2D(9,9), null, ([x, y]) => {
         return new C(new Vector2D(x,y));
     });
 
@@ -181,27 +181,27 @@ console.log(type);
     }
 
     console.log(g.getRows());
-    //
-    // const c = document.getElementById('demo-2');
-    //
-    // var context = c.getContext("2d");
-    //
-    // context.mozImageSmoothingEnabled    = false;
-    // context.webkitImageSmoothingEnabled = false;
-    // context.msImageSmoothingEnabled     = false;
-    // context.imageSmoothingEnabled       = false;
-    //
-    // for(const cell of g.getGenerator()) {
-    //
-    //     if(cell.getType() === 'commercial') {
-    //         context.fillStyle = "blue";
-    //     } else {
-    //         context.fillStyle = "green";
-    //     }
-    //
-    //     context.fillRect(cell.getIndex().getX(), cell.getIndex().getY(), 1, 1);
-    //
-    // }
+
+    const c = document.getElementById('demo-2');
+
+    var context = c.getContext("2d");
+
+    context.mozImageSmoothingEnabled    = false;
+    context.webkitImageSmoothingEnabled = false;
+    context.msImageSmoothingEnabled     = false;
+    context.imageSmoothingEnabled       = false;
+
+    for(const cell of g.getGenerator()) {
+
+        if(cell.getType() === 'commercial') {
+            context.fillStyle = "blue";
+        } else {
+            context.fillStyle = "green";
+        }
+
+        context.fillRect(cell.getIndex().getX(), cell.getIndex().getY(), 1, 1);
+
+    }
 
     const p    = [];
     const pixels = g.getGenerator();
