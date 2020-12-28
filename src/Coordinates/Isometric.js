@@ -6,16 +6,16 @@ import {Vector2D} from "@inwebo/vector";
 export default class Isometric extends CoordinatesAbstract {
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorth() {
+    getNorth(vector, distance = 1) {
         return Vector2D.add(this._position, new Vector2D(0, -2));
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorthEast() {
+    getNorthEast(vector, distance = 1) {
         return (this._position.getY() % 2 === 0) ?
             Vector2D.add(this._position, new Vector2D(0, -1)) :
             Vector2D.add(this._position, new Vector2D(1, -1))
@@ -23,16 +23,16 @@ export default class Isometric extends CoordinatesAbstract {
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getEast() {
+    getEast(vector, distance = 1) {
         return Vector2D.add(this._position, new Vector2D(1, 0));
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouthEast() {
+    getSouthEast(vector, distance = 1) {
         return (this._position.getY() % 2 === 0) ?
             Vector2D.add(this._position, new Vector2D(0, 1)) :
             Vector2D.add(this._position, new Vector2D(1, 1))
@@ -40,16 +40,16 @@ export default class Isometric extends CoordinatesAbstract {
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouth() {
+    getSouth(vector, distance = 1) {
         return Vector2D.add(this._position, new Vector2D(0, 2));
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouthWest() {
+    getSouthWest(vector, distance = 1) {
         return (this._position.getY() % 2 === 0) ?
             Vector2D.add(this._position, new Vector2D(-1, 1)) :
             Vector2D.add(this._position, new Vector2D(0, 1))
@@ -57,16 +57,16 @@ export default class Isometric extends CoordinatesAbstract {
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getWest() {
+    getWest(vector, distance = 1) {
         return Vector2D.add(this._position, new Vector2D(-1, 0));
     }
 
     /**
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorthWest() {
+    getNorthWest(vector, distance = 1) {
         return (this._position.getY() % 2 === 0) ?
             Vector2D.add(this._position, new Vector2D(-1, -1)) :
             Vector2D.add(this._position, new Vector2D(0, -1))

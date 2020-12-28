@@ -4,104 +4,94 @@ import {Vector2D} from "@inwebo/vector";
  * Matrix coordinates, knows its neighbors
  */
 export default class CoordinatesAbstract {
-    /**
-     * @param {Vector2D} position Grid position (x, y)
-     */
-    constructor(position) {
-        this._position  = position;
-        this._neighbors = null;
-    }
 
     /**
-     * Return all neighbors
-     * @return {Map}
+     * @param {Vector2D} vector
+     * @return {Map} A Map instance with keys: N, NW, W, SW, S, SE, E, NE
      */
-    getNeighbors() {
-        if(this._neighbors === null) {
-            this._neighbors = new Map([
-                ['N',  this.getNorth()],
-                ['NW',  this.getNorthWest()],
-                ['W',  this.getWest()],
-                ['SW',  this.getSouthWest()],
-                ['S',  this.getSouth()],
-                ['SE',  this.getSouthEast()],
-                ['E',  this.getEast()],
-                ['NE',  this.getNorthEast()],
-            ]);
-        }
-
-        return this._neighbors;
-    }
-
-    /**
-     * @returns {Vector2D}
-     */
-    getPosition() {
-        return this._position;
+    getNeighbors(vector) {
+        return new Map([
+            ['N', this.getNorth(vector)],
+            ['NW', this.getNorthWest(vector)],
+            ['W', this.getWest(vector)],
+            ['SW', this.getSouthWest(vector)],
+            ['S', this.getSouth(vector)],
+            ['SE', this.getSouthEast(vector)],
+            ['E', this.getEast(vector)],
+            ['NE', this.getNorthEast(vector)],
+        ]);
     }
 
     // region override
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
-     * @throws
+     * @return {Vector2D}
      */
-    getNorth(distance = 1) {
+    getNorth(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthEast(distance = 1) {
+    getNorthEast(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getEast(distance = 1) {
+    getEast(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthEast(distance = 1) {
+    getSouthEast(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getSouth(distance = 1) {
+    getSouth(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getSouthWest(distance = 1) {
+    getSouthWest(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getWest(distance = 1) {
+    getWest(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
 
     /**
+     * @param {Vector2D} vector
      * @param {number} distance
      * @return {Vector2D}
      */
-    getNorthWest(distance = 1) {
+    getNorthWest(vector, distance = 1) {
         throw 'Do not instanciate me !';
     }
     // endregion

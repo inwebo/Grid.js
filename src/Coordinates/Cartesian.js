@@ -7,66 +7,58 @@ import {Vector2D} from "@inwebo/vector";
 export default class Cartesian extends CoordinatesAbstract {
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorth(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(0, distance * -1));
+    getNorth(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(0, distance * -1));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorthEast(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance * -1));
+    getNorthEast(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance, distance * -1));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getEast(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance, 0));
+    getEast(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance, 0));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouthEast(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance, distance));
+    getSouthEast(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance, distance));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouth(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(0, distance));
+    getSouth(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(0, distance));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getSouthWest(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance));
+    getSouthWest(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance * -1, distance));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getWest(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, 0));
+    getWest(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance * -1, 0));
     }
 
     /**
-     * @param {number} distance
-     * @return {Vector2D}
+     * @inheritDoc
      */
-    getNorthWest(distance = 1) {
-        return Vector2D.add(this._position.clone(), new Vector2D(distance * -1, distance * -1));
+    getNorthWest(vector, distance = 1) {
+        return Vector2D.add(vector.clone(), new Vector2D(distance * -1, distance * -1));
     }
 };
