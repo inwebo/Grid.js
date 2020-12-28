@@ -77,8 +77,10 @@ describe('Grid', () => {
             assert.equal(grid.getCell(0, 0) instanceof Cell, true);
         });
 
-        it('grid.getCell(54, 7) = false', () => {
-            assert.equal(grid.getCell(54, 7), false);
+        it('grid.getCell(54, 7) throws', () => {
+            assert.throws(() => {
+                grid.getCell(54, 7);
+            });
         });
 
         it('grid.getCellByVector(new Vector2D(0, 0)) instanceof Cell', () => {
@@ -86,7 +88,9 @@ describe('Grid', () => {
         });
 
         it('grid.getCellByVector(new Vector2D(54, 7)) = false', () => {
-            assert.equal(grid.getCellByVector(new Vector2D(54, 7)), false);
+            assert.throws(() => {
+                grid.getCellByVector(new Vector2D(54, 7))
+            });
         });
 
         it('grid.getGenerator() is a generator', () => {
