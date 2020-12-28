@@ -128,11 +128,11 @@ describe('Cell', () => {
 
 describe('Coordinates', () => {
     const v1 = new Vector2D(3,3);
-    const c1 = new Cartesian(v1);
+    const c1 = new Cartesian();
 
     describe('Cartesian', () => {
         describe('Simple', () => {
-            let n1 = c1.getNeighbors();
+            let n1 = c1.getNeighbors(v1);
 
             it('N,NE,E,SE,S,SW,W', () => {
                 assert.equal(n1.get('N').getX() === 3, true);
