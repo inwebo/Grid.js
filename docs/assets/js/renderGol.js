@@ -7,7 +7,7 @@ export default class RenderGol extends Renderer2D {
         this._clear();
         const cells = grid.getGenerator();
 
-        const tileSize = new Vector2D(1,1);
+        const tileSize = new Vector2D(5,5);
 
         for (let cell of cells) {
             const origin = new Vector2D(cell.getIndex().getX() * tileSize.getX(), cell.getIndex().getY() * tileSize.getY());

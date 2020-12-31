@@ -238,7 +238,7 @@ const demo1 = () => {
         }
     }
 
-    const gol = new Gol(new Vector2D(500,500), null, ([col, row]) => {
+    const gol = new Gol(new Vector2D(150,75), null, ([col, row]) => {
         return new CellGol(new Vector2D(col, row));
     });
 
