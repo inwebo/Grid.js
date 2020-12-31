@@ -13,65 +13,11 @@
             <h1>Grid.js</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">homepage</a></li>
+                    <li><a href="index.html">Homepage</a></li>
                     <li><a href="demo-1.html">Grid render</a></li>
                     <li><a href="demo-2.html">Game of life</a></li>
                 </ul>
             </nav>
-            <h2>Demo</h2>
-            <figure class="">
-                <canvas id="demo-1" width="640" height="480" style="background-color: #494949; min-width: 100%; max-width: 100%" alt="Grid.js demonstration 1"></canvas>
-                <figcaption>
-                    Cols: <span id="cols-display">40</span>,
-                    Rows: <span id="rows-display">30</span>,
-                    Tile: <span id="width-display">30</span>px x <span id="height-display">40</span>px,
-                    Offset: x <span id="offsetX-display">40</span>px, y <span id="offsetY-display">40</span>px
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form>
-                <fieldset>
-                    <legend>Grid</legend>
-                    <label for="cols">Cols</label><input type="range" id="cols" name="cols" min="1" max="50" value="40"><br>
-                    <label for="rows">Rows</label><input type="range" id="rows" name="rows" min="1" max="50" value="30">
-                </fieldset>
-                <fieldset>
-                    <legend>Tile (px)</legend>
-                    <label for="tile-width">Width</label>
-                    <input type="range" id="tile-width" name="tile-width" min="1" max="50" value="16"><br>
-                    <label for="tile-height">Height</label>
-                    <input type="range" id="tile-height" name="tile-height" min="1" max="50" value="16">
-                </fieldset>
-                <fieldset>
-                    <legend>Offset (px)</legend>
-                    <label for="cell-offset-x">X</label>
-                    <input type="range" id="cell-offset-x" name="cell-offset-x" min="-10" max="10" value="2"><br>
-                    <label for="cell-offset-y">Y</label>
-                    <input type="range" id="cell-offset-y" name="cell-offset-y" min="-10" max="10" value="2">
-                </fieldset>
-                <fieldset>
-                    <legend>Colours</legend>
-                    <input type="color" id="colour1" name="colour1" value="#766273">
-                    <label for="colour1">Col.1</label>
-                    <input type="color" id="colour2" name="colour2" value="#B57786">
-                    <label for="colour1">Col.2</label>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <figure class="">
-                <canvas id="demo-2" width="750" height="800"
-                    style="background-color: #7f7f7f"
-                ></canvas>
-                <button id="update">Update</button>
-            </figure>
         </div>
     </div>
 </div>
