@@ -13,7 +13,8 @@ class CellGol extends Cell {
 
     constructor(index) {
         super(index);
-        this._isAlive = false;
+        this._isAlive   = false;
+        this._hasMutate = false;
     }
 }
 

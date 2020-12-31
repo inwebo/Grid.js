@@ -6,6 +6,7 @@ module.exports = {
         main: './src/index.js',
         app: './docs/assets/js/app.js',
         demo1: glob.sync('./docs/assets/js/demos/demo-1.js'),
+        demo2: glob.sync('./docs/assets/js/demos/demo-2.js'),
         test: './test/tests.js',
     },
     output: {
@@ -17,6 +18,7 @@ module.exports = {
                 case 'app':
                     return 'docs/assets/js/[name].min.js';
                 case 'demo1':
+                case 'demo2':
                     return 'docs/assets/js/demos/[name].min.js';
                 default:
                     break;
