@@ -2,10 +2,12 @@ import {Renderer2D} from "@inwebo/render.js";
 import {Vector2D} from "@inwebo/vector";
 
 export default class RenderGol extends Renderer2D {
-    _draw([grid, tileSize, cellOffset, colour1, colour2]) {
+    _draw([grid, cellOffset, colour1, colour2]) {
 
         this._clear();
         const cells = grid.getGenerator();
+
+        const tileSize = new Vector2D(1,1);
 
         for (let cell of cells) {
             const origin = new Vector2D(cell.getIndex().getX() * tileSize.getX(), cell.getIndex().getY() * tileSize.getY());

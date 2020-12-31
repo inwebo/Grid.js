@@ -238,7 +238,7 @@ const demo1 = () => {
         }
     }
 
-    const gol = new Gol(new Vector2D(3,3), null, ([col, row]) => {
+    const gol = new Gol(new Vector2D(500,500), null, ([col, row]) => {
         return new CellGol(new Vector2D(col, row));
     });
 
@@ -257,17 +257,17 @@ const demo1 = () => {
 
     const cells = gol.getGenerator();
 
-    // for (const cell of cells) {
-    //     const r = rand(1, 100);
-    //
-    //     if(r <= 10) {
-    //         cell.setAlive(true);
-    //     }
-    // }
+    for (const cell of cells) {
+        const r = rand(1, 100);
 
-    gol.getCell(1,0).setAlive(true);
-    gol.getCell(1,1).setAlive(true);
-    gol.getCell(1,2).setAlive(true);
+        if(r <= 25) {
+            cell.setAlive(true);
+        }
+    }
+
+    // gol.getCell(1,0).setAlive(true);
+    // gol.getCell(1,1).setAlive(true);
+    // gol.getCell(1,2).setAlive(true);
 
     // console.log(gol.mustLive(gol.getCell(9,10)));
     // console.log(gol.mustLive(gol.getCell(0,0)));
@@ -282,11 +282,19 @@ const demo1 = () => {
         renderGol._draw([gol, tileSize, cellOffset, form.colours.first.value, form.colours.second.value]);
     };
 
-    // setInterval(() => {
-    //     gol.update();
-    //     renderGol._draw([gol, tileSize, cellOffset, form.colours.first.value, form.colours.second.value]);
-    // }, 500);
+    setInterval(() => {
+        gol.update();
+        renderGol._draw([gol, tileSize, cellOffset, form.colours.first.value, form.colours.second.value]);
+    }, 10);
 
+    // const testCell = new Cell(new Vector2D());
+    // console.log(testCell);
+    // const testClone = Object.assign(Object.create(testCell), testCell);
+    //
+    // console.log(testClone);
+    // testClone.getIndex().setX(-5);
+    // console.log(testCell);
+    // console.log(testClone);
 };
 
 export default demo1;

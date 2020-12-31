@@ -1,4 +1,5 @@
 import {Cartesian, Cell, Grid} from "../../../src";
+import {Vector2D} from "@inwebo/vector";
 
 class CellGol extends Cell {
 
@@ -63,30 +64,26 @@ export default class Gol extends Grid {
     }
 
     update() {
+        const rows = new Array(this._dimensions.getY()).fill(this._defaultCellValue);
+        Object.seal(rows);
+        for(let y = 0; y < rows.length; y++) {
 
-        const cells = this.getGenerator() ;
+            let cols = [];
 
-        let rows = new Array(this._dimensions.getY()).fill([]);
+            for(let x = 0; x < this._dimensions.getX(); x++) {
+                const cell = this.getCell(x, y);
+                const mustLive = this.mustLive(cell);
 
-        for (const cell of cells) {
-            // if(false === this.mustLive(cell)) {
-            //     cell.setAlive(false);
-            // } else {
-            //     cell.setAlive(true);
-            // }
-            const c = new CellGol(cell.getIndex());
+                const newCell = new CellGol(new Vector2D(x, y));
 
-            if(false === this.mustLive(cell)) {
-                c.setAlive(false);
-            } else {
-                c.setAlive(true);
+
+                newCell.setAlive(mustLive);
+                cols.push(newCell);
             }
-
-            rows[cell.getIndex().getY()].push(c);
-
-
+            Object.seal(cols);
+            rows[y] = cols;
         }
-        console.log(rows);
+
         this._rows = rows;
     }
 }
