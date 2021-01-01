@@ -3,8 +3,20 @@
 ES6 grid implementation, [See demo page](https://inwebo.github.io/Grid.js/).
 
 ## Installation
+
+### Git
 ```bash
 git clone https://github.com/inwebo/Grid.js.git
+```
+
+### NPM
+```bash
+npm i @inwebo/grid.js
+```
+
+### Yarn
+```bash
+yarn i @inwebo/grid.js
 ```
 
 ## Tests
