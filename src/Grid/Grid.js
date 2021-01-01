@@ -161,8 +161,6 @@ export default class Grid {
         } else {
             return col;
         }
-
-        return col;
     }
 
     /**
