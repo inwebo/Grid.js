@@ -21,6 +21,11 @@ yarn i @inwebo/grid.js
 ```
 
 ## Tests
+### Npm
+```shell script
+npm test
+```
+### Yarn
 ```shell script
 yarn test
 ``` 
