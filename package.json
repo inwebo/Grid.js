@@ -5,7 +5,7 @@
   "main": "/src/index.js",
   "scripts": {
     "build": "webpack",
-    "test": "webpack --mode development && nyc --reporter=html --reporter=text mocha dist/test.min.js"
+    "test": "standard && webpack --mode development && nyc --reporter=html --reporter=text mocha dist/test.min.js"
   },
   "keywords": [
     "ES6",
@@ -32,6 +32,7 @@
     "qunit": "^2.9.3",
     "serialize-javascript": ">=3.1.0",
     "serve": "^11.3.2",
+    "standard": "^16.0.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.0.8"
   },
