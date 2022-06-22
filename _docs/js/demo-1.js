@@ -1,7 +1,7 @@
-import { Vector2D } from '@inwebo/vector'
-import Grid from '../../../../src/Grid/Grid'
-import RenderGrid from '../renderGrid'
-import { Cell } from '../../../../src'
+import { Vector2D } from '@inwebo/vector';
+import Grid from "../../src/Grid/Grid";
+import Cell from "../../src/Cells/Cell";
+import RenderGrid from "./renderGrid";
 
 const demo1 = () => {
   const canvas = document.getElementById('demo-1')
