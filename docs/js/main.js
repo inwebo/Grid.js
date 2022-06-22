@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_inwebo_grid_js=self.webpackChunk_inwebo_grid_js||[]).push([[179],{880:()=>{console.log("docs/index.js")}},s=>{s(s.s=880)}]);
