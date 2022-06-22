@@ -12,7 +12,7 @@
     "docs": "cross-env NODE_ENV=production webpack --config config/webpack.docs.js --watch",
     "lint": "eslint 'src/**/*.js' || true",
     "prettify": "prettier --write 'src/**/*.js'",
-    "test": "nyc --reporter=html --reporter=text mocha dist/test.min.js"
+    "test": "nyc --reporter=html --report-dir docs/coverage --reporter=text mocha dist/test.min.js"
   },
   "keywords": [
     "ES6",
@@ -54,7 +54,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@inwebo/vector": "^0.0"
+    "@inwebo/vector": "^0.0",
+    "@inwebo/render.js": "^0.1.1"
   },
   "bugs": {
     "url": "https://github.com/inwebo/npm-boilerplate/issues"
