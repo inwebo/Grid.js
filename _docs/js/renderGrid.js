@@ -1,5 +1,5 @@
-import { Renderer2D } from '@inwebo/render.js'
-import { Vector2D } from '@inwebo/vector'
+import { Vector2D } from '@inwebo/vector';
+import {Renderer2D} from "@inwebo/render.js";
 
 export default class RenderGrid extends Renderer2D {
   _draw ([grid, tileSize, cellOffset, colour1, colour2]) {

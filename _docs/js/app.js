@@ -1,5 +1,5 @@
 import demo1 from './demos/demo-1'
-
+alert('++')
 window.addEventListener('DOMContentLoaded', (event) => {
   demo1()
 

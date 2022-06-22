@@ -1,62 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Grid.js</title>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Grid.js</h1>
-            <h2>Grid render demo</h2>
-            <figure class="">
-                <canvas id="demo-1" width="640" height="480" style="background-color: #494949; min-width: 100%; max-width: 100%" alt="Grid.js demonstration 1"></canvas>
-                <figcaption>
-                    Cols: <span id="cols-display">40</span>,
-                    Rows: <span id="rows-display">30</span>,
-                    Tile: <span id="width-display">30</span>px x <span id="height-display">40</span>px,
-                    Offset: x <span id="offsetX-display">40</span>px, y <span id="offsetY-display">40</span>px
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form>
-                <fieldset>
-                    <legend>Grid</legend>
-                    <label for="cols">Cols</label><input type="range" id="cols" name="cols" min="1" max="50" value="40"><br>
-                    <label for="rows">Rows</label><input type="range" id="rows" name="rows" min="1" max="50" value="30">
-                </fieldset>
-                <fieldset>
-                    <legend>Tile (px)</legend>
-                    <label for="tile-width">Width</label>
-                    <input type="range" id="tile-width" name="tile-width" min="1" max="50" value="16"><br>
-                    <label for="tile-height">Height</label>
-                    <input type="range" id="tile-height" name="tile-height" min="1" max="50" value="16">
-                </fieldset>
-                <fieldset>
-                    <legend>Offset (px)</legend>
-                    <label for="cell-offset-x">X</label>
-                    <input type="range" id="cell-offset-x" name="cell-offset-x" min="-10" max="10" value="2"><br>
-                    <label for="cell-offset-y">Y</label>
-                    <input type="range" id="cell-offset-y" name="cell-offset-y" min="-10" max="10" value="2">
-                </fieldset>
-                <fieldset>
-                    <legend>Colours</legend>
-                    <input type="color" id="colour1" name="colour1" value="#766273">
-                    <label for="colour1">Col.1</label>
-                    <input type="color" id="colour2" name="colour2" value="#B57786">
-                    <label for="colour1">Col.2</label>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</div>
-<script type="application/javascript" src="../docs/assets/js/app.min.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css"><title>@inwebo/grid.js</title><meta name="description" content="ES6 Grid implementation"/><link rel="canonical" href="index.html"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script><meta property="og:locale" content="en_US"/><meta property="og:type" content="website"/><meta property="og:title" content="@inwebo/grid.js"/><meta property="og:description" content="ES6 Grid implementation"/><meta property="og:url" content="https://inwebo.github.io/Grid.js/"/><meta property="og:site_name" content="Grid.js"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="@inwebo/grid.js"/><meta name="twitter:description" content="ES6 Grid implementation"/><meta name="twitter:site" content="Grid.js"/><meta name="twitter:creator" content="Inwebo veritas"/><link rel="icon" href="/favicon.png"><script defer="defer" src="/js/runtime.js"></script><script defer="defer" src="/js/main.js"></script></head><body><header><h1 class="title">@inwebo/grid.js</h1><h2 class="subtitle">ES6 Grid implementation</h2><p class="disclaimer"><img title="Discover Grid.js activity on github by Inwebo veritas" alt="Grid.js activity by Inwebo veritas" src="https://img.shields.io/github/commit-activity/w/inwebo/Grid.js"> <img title="Discover Grid.js repository on github by Inwebo veritas" alt="Grid.js repository size by Inwebo veritas" src="https://img.shields.io/github/repo-size/inwebo/Grid.js?logo=Grid.js"> <img title="Grid.js version on github" alt="Grid.js version size by Inwebo veritas" src="https://img.shields.io/github/package-json/v/inwebo/Grid.js?logo=Grid.js"> <img title="Grid.js version last commit by Inwebo veritas on github" alt="Grid.js last activity by Inwebo veritas" src="https://img.shields.io/github/last-commit/inwebo/Grid.js"></p><a class="scroll-down" href="#content" title="Discover Grid.js on github by Inwebo veritas"></a></header><main id="content"><section><ul class="breadcrumbs"><li><a title="Inwebo veritas" href="https://github.com/inwebo">Inwebo</a></li><li><a title="Inwebo veritas Grid.js" href="https://github.com/inwebo/Grid.js">Grid.js</a></li><li>Documentation</li></ul></section><div class="container"><div class="row"><div class="col col-lg-3"><div class="sidebar sidebar-left"><h3 class="sidebar-category"><a title="How to use Grid.js" href="#quick-start">Quick start</a></h3><ul class="sidebar-links"><li><a title="Grid.js features" href="#features">Features</a></li><li><a title="Grid.js installation" href="#installation">Install</a></li></ul><h3 class="sidebar-category"><a title="Grid.js's dependencies class explore them" href="#class">Class</a></h3><ul class="sidebar-links"><li><a title="Grid.js's class Render.js" href="#render-abstract-js">RendererAbstract.js</a></li><li><a title="Grid.js's class Rgb.js" href="#render-2d-js">Renderer2D.js</a></li><li><a title="Grid.js's class RendererOffScreen.js" href="#render-offscreen-js">RendererOffScreen.js</a></li></ul><h3 class="sidebar-category"><a title="Grid.js's use cases" href="#demos">Demos</a></h3><ul class="sidebar-links"><li><a title="Bootstrap Grid.js project" href="#bootstrap-sprite-js">Bootstrap</a></li></ul><h3 class="sidebar-category"><a title="Grid.js's use cases" href="#help">Help</a></h3><ul class="sidebar-links"><li><a title="Render.js bug report" href="https://github.com/inwebo/Render.js/issues" target="_blank">Bug report</a></li></ul></div></div><div class="col col-lg-9"><div class="row"><div class="col-sm-12"><h1>Grid.js</h1><h2>Grid render demo</h2><figure class=""><canvas id="demo-1" width="640" height="480" style="background-color: #494949; min-width: 100%; max-width: 100%" alt="Grid.js demonstration 1"></canvas><figcaption>Cols: <span id="cols-display">40</span>, Rows: <span id="rows-display">30</span>, Tile: <span id="width-display">30</span>px x <span id="height-display">40</span>px, Offset: x <span id="offsetX-display">40</span>px, y <span id="offsetY-display">40</span>px</figcaption></figure></div></div><div class="row"><div class="col-sm-12"><form><fieldset><legend>Grid</legend><label for="cols">Cols</label><input type="range" id="cols" name="cols" min="1" max="50" value="40"><br><label for="rows">Rows</label><input type="range" id="rows" name="rows" min="1" max="50" value="30"></fieldset><fieldset><legend>Tile (px)</legend><label for="tile-width">Width</label> <input type="range" id="tile-width" name="tile-width" min="1" max="50" value="16"><br><label for="tile-height">Height</label> <input type="range" id="tile-height" name="tile-height" min="1" max="50" value="16"></fieldset><fieldset><legend>Offset (px)</legend><label for="cell-offset-x">X</label> <input type="range" id="cell-offset-x" name="cell-offset-x" min="-10" max="10" value="2"><br><label for="cell-offset-y">Y</label> <input type="range" id="cell-offset-y" name="cell-offset-y" min="-10" max="10" value="2"></fieldset><fieldset><legend>Colours</legend><input type="color" id="colour1" name="colour1" value="#766273"> <label for="colour1">Col.1</label> <input type="color" id="colour2" name="colour2" value="#B57786"> <label for="colour1">Col.2</label></fieldset></form></div></div><section id="quick-start"><h4 id="features">Features</h4><ul><li>Smart javascript <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" title="Javascript canvas API">Canvas API</a> use.</li><li>One Job</li><li>Light weight</li><li>Easy to understand <cite lang="fr">Pas de foutaises !</cite></li><li>Modern Javascript (ES6), OOP ready. Extends a class and forget about javascript <cite>prototype</cite></li><li>Manipulate color transparency</li><li>Animate sprite as you want, choose your frames and animation duration. With SpriteMap object.</li></ul><br/><hr><br/><h4 id="requirements">Requirements</h4><p>You <strong>must</strong> understand the canvas API, you <strong>must</strong> know ES6 and Node.js compilation. If you need help i'm available here <a title="Inwebo veritas on github" href="https://github.com/inwebo" target="_blank">github</a>.</p><br/><hr><br/><h4 id="installation">Installation</h4><pre class="language-bash"><code class="language-bash">npm install @inwebo/render.js</code></pre></section><section id=""><h4 id="class">Class</h4><h4 id="render-abstract-js"><a href="https://github.com/inwebo/Render.js/blob/master/src/RendererAbstract.js" target="_blank">RendererAbstract.js</a></h4><p>You <strong>must not</strong> instanciate it, build main rendering logic and expose a canvas context</p><h4 id="render-2d-js"><a href="https://github.com/inwebo/Render.js/blob/master/src/Renderer2D.js" target="_blank">Renderer2D.js</a></h4><p>Extends RenderAbstract and expose a canvas2 context.</p><h4 id="render-offscreen-js"><a href="https://github.com/inwebo/Render.js/blob/master/src/RenderOffScreen.js" target="_blank">RendererOffScreen.js</a></h4><p>Extends RenderAbstract, render an offscreen image and expose image's imageData.</p></section><section id="demos"><canvas id="sprite" width="16" height="16"></canvas><pre class="language-javascript">
+              <code class="language-javascript">
+                window.addEventListener("DOMContentLoaded", (event) => {
+                });
+              </code>
+            </pre></section><section id="help"><h4 id="one-love">Thanks</h4><ul><li>Mustard ui</li></ul></section></div></div></div></main><footer><div class="container"><div class="row"><div class="col col-lg-5"><div class="footer-text"><h5 class="h3">Inwebo veritas</h5><p dir="auto"><a href="https://www.julien-hannotin.fr" title="Julien Hannotin">I am</a> a <a href="https://www.linkedin.com/in/julien-hannotin/" title="Linkedin profile">web developer</a>, I create <a href="https://packagist.org/packages/inwebo/">PHP application</a> or <a href="https://www.npmjs.com/~inwebo">modern Javascript</a>. I sometimes <a href="https://www.deviantart.com/inwebo">take some photos too</a>.</p></div></div><div class="col col-sm-6 col-lg-3 col-lg-offset-1"><h5 class="footer-links-category">Projects</h5><ul class="footer-links"><li><a title="Javascript library to manage sprites sheet, sprites, animated sprites and transparency sprite with ease. " href="https://github.com/inwebo/Sprite.js">Sprite.js</a></li><li><a title="Javascript canvas renderer, it abstracts the boring parts and ease its use. " href="https://github.com/inwebo/Render.js">Render.js</a></li><li><a title="Asynchronously Load assets in the Browser with Javascript " href="https://github.com/inwebo/AssetsLoader.js">AssetsLoader.js</a></li><li><a title="Physics simulator" href="https://github.com/inwebo/Physx.js">Physx.js</a></li><li><a title="Javascript vector implementation" href="https://github.com/inwebo/Vector">Vector</a></li></ul></div></div></div></footer><script src="./js/runtime.js"></script></body></html>

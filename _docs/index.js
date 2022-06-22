@@ -1,4 +1,5 @@
-// Test import of a JavaScript module
-import { example } from '@/js/example'
+import demo1 from "./js/demo-1";
 
-console.log('docs/index.js')
+window.addEventListener("DOMContentLoaded", (event) => {
+    demo1()
+});
